@@ -55,3 +55,12 @@ seaweed <- toJSON(seaweed, pretty=TRUE)
 seaweedN <-seaweed$report$food$nutrients
 names <- names(flatten(seaweedN))
 seaweed <- seaweedN[2:6, ]; rm(seaweedN)
+
+
+# Parm
+parmesan<- fromJSON("http://api.nal.usda.gov/ndb/reports/?ndbno=01032&type=b&format=json&api_key=DEMO_KEY") 
+parmesan <- toJSON(parmesan, pretty=TRUE) 
+parmesanN <-parmesan$report$food$nutrients
+names <- names(flatten(parmesanN))
+parmesan <- parmesanN[2:6, ]; rm(parmesanN)
+
