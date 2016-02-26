@@ -42,8 +42,16 @@ lentils <- lentilsN[2:6, ]; rm(lentilsN)
 
 
 # YELLOW ONION
-Yonions<- fromJSON("http://api.nal.usda.gov/ndb/reports/?ndbno=11249&type=b&format=json&api_key=DEMO_KEY") 
+Yonions<- fromJSON("http://api.nal.usda.gov/ndb/reports/?ndbno=11283&type=b&format=json&api_key=DEMO_KEY") 
 Yonions <- toJSON(Yonions, pretty=TRUE) 
 lentilsN <-Yonions$report$food$nutrients
 names <- names(flatten(YonionsN))
 Yonions <- lentilsN[2:6, ]; rm(YonionsN)
+
+
+# SEAWEED
+seaweed<- fromJSON("http://api.nal.usda.gov/ndb/reports/?ndbno=11283&type=b&format=json&api_key=DEMO_KEY") 
+seaweed <- toJSON(seaweed, pretty=TRUE) 
+seaweedN <-seaweed$report$food$nutrients
+names <- names(flatten(seaweedN))
+seaweed <- seaweedN[2:6, ]; rm(seaweedN)
