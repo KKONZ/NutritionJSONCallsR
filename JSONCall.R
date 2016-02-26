@@ -39,3 +39,11 @@ lentils <- toJSON(lentils, pretty=TRUE)
 lentilsN <-lentils$report$food$nutrients
 names <- names(flatten(lentilsN))
 lentils <- lentilsN[2:6, ]; rm(lentilsN)
+
+
+# YELLOW ONION
+Yonions<- fromJSON("http://api.nal.usda.gov/ndb/reports/?ndbno=11249&type=b&format=json&api_key=DEMO_KEY") 
+Yonions <- toJSON(Yonions, pretty=TRUE) 
+lentilsN <-Yonions$report$food$nutrients
+names <- names(flatten(YonionsN))
+Yonions <- lentilsN[2:6, ]; rm(YonionsN)
